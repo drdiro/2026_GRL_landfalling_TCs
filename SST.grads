@@ -1,0 +1,166 @@
+reinit
+xdfopen /home/cmp28/obs/ERSSTv5/sst.mnmean.ctl
+
+set map 1 1 10
+set mpdset hires
+set grads off
+set grid off
+set xlopts 1 6 .16
+set ylopts 1 6 .16
+test=const(sst,-999,-u) 
+set rgb 16 170 170 170
+
+sst1997=ave(sst,time=aug1997,time=oct1997)
+sst1984=ave(sst,time=aug1984,time=oct1984)
+sst1980=ave(sst,time=aug1980,time=oct1980)
+sst2015=ave(sst,time=aug2015,time=oct2015)
+sst2013=ave(sst,time=aug2013,time=oct2013)
+sst2025=ave(sst,time=aug2025,time=oct2025)
+sst2012=ave(sst,time=aug2012,time=oct2012)
+sst1991=ave(sst,time=aug1991,time=oct1991)
+SSTlow=(1/8)*(sst1997+sst1984+sst1980+sst2015+sst2013+sst2025+sst2012+sst1991)
+
+sst1985=ave(sst,time=aug1985,time=oct1985)
+sst2014=ave(sst,time=aug2014,time=oct2014)
+sst2002=ave(sst,time=aug2002,time=oct2002)
+sst1996=ave(sst,time=aug1996,time=oct1996)
+sst2024=ave(sst,time=aug2024,time=oct2024)
+sst2007=ave(sst,time=aug2007,time=oct2007)
+sst1999=ave(sst,time=aug1999,time=oct1999)
+sst1988=ave(sst,time=aug1988,time=oct1988)
+SSThigh=(1/8)*(sst1985+sst2014+sst2002+sst1996+sst2024+sst2007+sst1999+sst1988)
+
+sst1997=ave(sst,time=aug1997,time=oct1997)
+sst2015=ave(sst,time=aug2015,time=oct2015)
+sst2023=ave(sst,time=aug2023,time=oct2023)
+sst1987=ave(sst,time=aug1987,time=oct1987)
+sst1982=ave(sst,time=aug1982,time=oct1982)
+sst2002=ave(sst,time=aug2002,time=oct2002)
+sst2009=ave(sst,time=aug2009,time=oct2009)
+sst2004=ave(sst,time=aug2004,time=oct2004)
+sst1994=ave(sst,time=aug1994,time=oct1994)
+sst2006=ave(sst,time=aug2006,time=oct2006)
+sst1986=ave(sst,time=aug1986,time=oct1986)
+sst1991=ave(sst,time=aug1991,time=oct1991)
+sstNino=(1/12)*(sst1997+sst2015+sst2023+sst1987+sst1982+sst2002+sst2009+sst2004+sst1994+sst2006+sst1986+sst1991)
+
+sst1984=ave(sst,time=aug1984,time=oct1984)
+sst2021=ave(sst,time=aug2021,time=oct2021)
+sst1983=ave(sst,time=aug1983,time=oct1983)
+sst1995=ave(sst,time=aug1995,time=oct1995)
+sst2016=ave(sst,time=aug2016,time=oct2016)
+sst1985=ave(sst,time=aug1985,time=oct1985)
+sst2020=ave(sst,time=aug2020,time=oct2020)
+sst2011=ave(sst,time=aug2011,time=oct2011)
+sst1998=ave(sst,time=aug1998,time=oct1998)
+sst1999=ave(sst,time=aug1999,time=oct1999)
+sst2022=ave(sst,time=aug2022,time=oct2022)
+sst2007=ave(sst,time=aug2007,time=oct2007)
+sst2010=ave(sst,time=aug2010,time=oct2010)
+sst1988=ave(sst,time=aug1988,time=oct1988)
+sstNina=(1/14)*(sst1984+sst2021+sst1983+sst1995+sst2016+sst1985+sst2020+sst2011+sst1998+sst1999+sst2022+sst2007+sst2010+sst1988)
+
+augSST=ave(sst,time=aug1980,time=aug2025,12)
+sepSST=ave(sst,time=sep1980,time=sep2025,12)
+octSST=ave(sst,time=oct1980,time=oct2025,12)
+ASOSST=(1/3)*(augSST+sepSST+octSST)
+
+set vpage 0 5.5 4.25 8.5
+set lat -35 50
+set lon 130 375
+set ylint 10
+set grads off
+set gxout shaded
+set clevs -999
+set ccols 15 15
+d test
+color -kind NGSbluered9 -gxout shaded -levs -.7 -.6 -.5 -.4 -.3 -.2 -.1 .1 .2 .3 .4 .5 .6 .7
+color -kind NGSbluered9 -gxout shaded -levs -1.1 -.9 -.7 -.5 -.3 -.1 .1 .3 .5 .7 .9 1.1
+d SSTlow-ASOSST
+set lon -230 15
+set ylint 10
+set grads off
+set gxout shaded
+set clevs -999
+set ccols 15 15
+d test
+color -kind NGSbluered9 -gxout shaded -levs -.7 -.6 -.5 -.4 -.3 -.2 -.1 .1 .2 .3 .4 .5 .6 .7
+color -kind NGSbluered9 -gxout shaded -levs -1.1 -.9 -.7 -.5 -.3 -.1 .1 .3 .5 .7 .9 1.1
+d SSTlow-ASOSST
+draw title SST: Low landfalling percentage
+
+set vpage 5.5 11 4.25 8.5
+set lat -35 50
+set lon 130 375
+set ylint 10
+set grads off
+set gxout shaded
+set clevs -999
+set ccols 15 15
+d test
+color -kind NGSbluered9 -gxout shaded -levs -.7 -.6 -.5 -.4 -.3 -.2 -.1 .1 .2 .3 .4 .5 .6 .7
+color -kind NGSbluered9 -gxout shaded -levs -1.1 -.9 -.7 -.5 -.3 -.1 .1 .3 .5 .7 .9 1.1
+d SSThigh-ASOSST
+set lon -230 15
+set ylint 10
+set grads off
+set gxout shaded
+set clevs -999
+set ccols 15 15
+d test
+color -kind NGSbluered9 -gxout shaded -levs -.7 -.6 -.5 -.4 -.3 -.2 -.1 .1 .2 .3 .4 .5 .6 .7
+color -kind NGSbluered9 -gxout shaded -levs -1.1 -.9 -.7 -.5 -.3 -.1 .1 .3 .5 .7 .9 1.1
+d SSThigh-ASOSST
+draw title SST: High landfalling percentage
+
+set vpage 0 5.5 1.5 5.75
+set lat -35 50
+set lon 130 375
+set ylint 10
+set grads off
+set gxout shaded
+set clevs -999
+set ccols 15 15
+d test
+color -kind NGSbluered9 -gxout shaded -levs -.8 -.7 -.6 -.5 -.4 -.3 -.2 -.1 .1 .2 .3 .4 .5 .6 .7 .8
+color -kind NGSbluered9 -gxout shaded -levs -1.1 -.9 -.7 -.5 -.3 -.1 .1 .3 .5 .7 .9 1.1
+d sstNino-ASOSST
+set lon -230 15
+set ylint 10
+set grads off
+set gxout shaded
+set clevs -999
+set ccols 15 15
+d test
+color -kind NGSbluered9 -gxout shaded -levs -.8 -.7 -.6 -.5 -.4 -.3 -.2 -.1 .1 .2 .3 .4 .5 .6 .7 .8
+color -kind NGSbluered9 -gxout shaded -levs -1.1 -.9 -.7 -.5 -.3 -.1 .1 .3 .5 .7 .9 1.1
+d sstNino-ASOSST
+cbarn
+draw title SST: El Nino
+
+set vpage 5.5 11 1.5 5.75
+set lat -35 50
+set lon 130 375
+set ylint 10
+set grads off
+set gxout shaded
+set clevs -999
+set ccols 15 15
+d test
+color -kind NGSbluered9 -gxout shaded -levs -.8 -.7 -.6 -.5 -.4 -.3 -.2 -.1 .1 .2 .3 .4 .5 .6 .7 .8
+color -kind NGSbluered9 -gxout shaded -levs -1.1 -.9 -.7 -.5 -.3 -.1 .1 .3 .5 .7 .9 1.1
+d sstNina-ASOSST
+set lon -230 15
+set ylint 10
+set grads off
+set gxout shaded
+set clevs -999
+set ccols 15 15
+d test
+color -kind NGSbluered9 -gxout shaded -levs -.8 -.7 -.6 -.5 -.4 -.3 -.2 -.1 .1 .2 .3 .4 .5 .6 .7 .8
+color -kind NGSbluered9 -gxout shaded -levs -1.1 -.9 -.7 -.5 -.3 -.1 .1 .3 .5 .7 .9 1.1
+d sstNina-ASOSST
+cbarn
+draw title SST: La Nina
+
+printim SST.png x2200 y1750 white
