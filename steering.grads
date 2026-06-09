@@ -1,0 +1,279 @@
+reinit
+xdfopen /home/cmp28/obs/NCEP2/monthly/hgt.mon.mean.ctl
+xdfopen /home/cmp28/obs/NCEP2/monthly/uwnd.mon.mean.ctl
+xdfopen /home/cmp28/obs/NCEP2/monthly/vwnd.mon.mean.ctl
+
+set map 1 1 10
+set mpdset hires
+set grads off
+set grid off
+set xlopts 1 6 .15
+set ylopts 1 6 .15
+
+set lev 500
+
+hgt1997=ave(hgt,time=aug1997,time=oct1997)
+hgt1984=ave(hgt,time=aug1984,time=oct1984)
+hgt1980=ave(hgt,time=aug1980,time=oct1980)
+hgt2015=ave(hgt,time=aug2015,time=oct2015)
+hgt2013=ave(hgt,time=aug2013,time=oct2013)
+hgt2025=ave(hgt,time=aug2025,time=oct2025)
+hgt2012=ave(hgt,time=aug2012,time=oct2012)
+hgt1991=ave(hgt,time=aug1991,time=oct1991)
+hgtlow=(1/8)*(hgt1997+hgt1984+hgt1980+hgt2015+hgt2013+hgt2025+hgt2012+hgt1991)
+
+hgt1985=ave(hgt,time=aug1985,time=oct1985)
+hgt2014=ave(hgt,time=aug2014,time=oct2014)
+hgt2002=ave(hgt,time=aug2002,time=oct2002)
+hgt1996=ave(hgt,time=aug1996,time=oct1996)
+hgt2024=ave(hgt,time=aug2024,time=oct2024)
+hgt2007=ave(hgt,time=aug2007,time=oct2007)
+hgt1999=ave(hgt,time=aug1999,time=oct1999)
+hgt1988=ave(hgt,time=aug1988,time=oct1988)
+hgthigh=(1/8)*(hgt1985+hgt2014+hgt2002+hgt1996+hgt2024+hgt2007+hgt1999+hgt1988)
+
+hgt1997=ave(hgt,time=aug1997,time=oct1997)
+hgt2015=ave(hgt,time=aug2015,time=oct2015)
+hgt2023=ave(hgt,time=aug2023,time=oct2023)
+hgt1987=ave(hgt,time=aug1987,time=oct1987)
+hgt1982=ave(hgt,time=aug1982,time=oct1982)
+hgt2002=ave(hgt,time=aug2002,time=oct2002)
+hgt2009=ave(hgt,time=aug2009,time=oct2009)
+hgt2004=ave(hgt,time=aug2004,time=oct2004)
+hgt1994=ave(hgt,time=aug1994,time=oct1994)
+hgt2006=ave(hgt,time=aug2006,time=oct2006)
+hgt1986=ave(hgt,time=aug1986,time=oct1986)
+hgt1991=ave(hgt,time=aug1991,time=oct1991)
+hgtNino=(1/12)*(hgt1997+hgt2015+hgt2023+hgt1987+hgt1982+hgt2002+hgt2009+hgt2004+hgt1994+hgt2006+hgt1986+hgt1991)
+
+hgt1984=ave(hgt,time=aug1984,time=oct1984)
+hgt2021=ave(hgt,time=aug2021,time=oct2021)
+hgt1983=ave(hgt,time=aug1983,time=oct1983)
+hgt1995=ave(hgt,time=aug1995,time=oct1995)
+hgt2016=ave(hgt,time=aug2016,time=oct2016)
+hgt1985=ave(hgt,time=aug1985,time=oct1985)
+hgt2020=ave(hgt,time=aug2020,time=oct2020)
+hgt2011=ave(hgt,time=aug2011,time=oct2011)
+hgt1998=ave(hgt,time=aug1998,time=oct1998)
+hgt1999=ave(hgt,time=aug1999,time=oct1999)
+hgt2022=ave(hgt,time=aug2022,time=oct2022)
+hgt2007=ave(hgt,time=aug2007,time=oct2007)
+hgt2010=ave(hgt,time=aug2010,time=oct2010)
+hgt1988=ave(hgt,time=aug1988,time=oct1988)
+hgtNina=(1/14)*(hgt1984+hgt2021+hgt1983+hgt1995+hgt2016+hgt1985+hgt2020+hgt2011+hgt1998+hgt1999+hgt2022+hgt2007+hgt2010+hgt1988)
+
+aughgt=ave(hgt,time=aug1980,time=aug2025,12)
+sephgt=ave(hgt,time=sep1980,time=sep2025,12)
+octhgt=ave(hgt,time=oct1980,time=oct2025,12)
+ASOhgt=(1/3)*(aughgt+sephgt+octhgt)
+
+
+uwnd1997=ave(uwnd.2,time=aug1997,time=oct1997)
+uwnd1984=ave(uwnd.2,time=aug1984,time=oct1984)
+uwnd1980=ave(uwnd.2,time=aug1980,time=oct1980)
+uwnd2015=ave(uwnd.2,time=aug2015,time=oct2015)
+uwnd2013=ave(uwnd.2,time=aug2013,time=oct2013)
+uwnd2025=ave(uwnd.2,time=aug2025,time=oct2025)
+uwnd2012=ave(uwnd.2,time=aug2012,time=oct2012)
+uwnd1991=ave(uwnd.2,time=aug1991,time=oct1991)
+uwndlow=(1/8)*(uwnd1997+uwnd1984+uwnd1980+uwnd2015+uwnd2013+uwnd2025+uwnd2012+uwnd1991)
+
+uwnd1985=ave(uwnd.2,time=aug1985,time=oct1985)
+uwnd2014=ave(uwnd.2,time=aug2014,time=oct2014)
+uwnd2002=ave(uwnd.2,time=aug2002,time=oct2002)
+uwnd1996=ave(uwnd.2,time=aug1996,time=oct1996)
+uwnd2024=ave(uwnd.2,time=aug2024,time=oct2024)
+uwnd2007=ave(uwnd.2,time=aug2007,time=oct2007)
+uwnd1999=ave(uwnd.2,time=aug1999,time=oct1999)
+uwnd1988=ave(uwnd.2,time=aug1988,time=oct1988)
+uwndhigh=(1/8)*(uwnd1985+uwnd2014+uwnd2002+uwnd1996+uwnd2024+uwnd2007+uwnd1999+uwnd1988)
+
+uwnd1997=ave(uwnd.2,time=aug1997,time=oct1997)
+uwnd2015=ave(uwnd.2,time=aug2015,time=oct2015)
+uwnd2023=ave(uwnd.2,time=aug2023,time=oct2023)
+uwnd1987=ave(uwnd.2,time=aug1987,time=oct1987)
+uwnd1982=ave(uwnd.2,time=aug1982,time=oct1982)
+uwnd2002=ave(uwnd.2,time=aug2002,time=oct2002)
+uwnd2009=ave(uwnd.2,time=aug2009,time=oct2009)
+uwnd2004=ave(uwnd.2,time=aug2004,time=oct2004)
+uwnd1994=ave(uwnd.2,time=aug1994,time=oct1994)
+uwnd2006=ave(uwnd.2,time=aug2006,time=oct2006)
+uwnd1986=ave(uwnd.2,time=aug1986,time=oct1986)
+uwnd1991=ave(uwnd.2,time=aug1991,time=oct1991)
+uwndNino=(1/12)*(uwnd1997+uwnd2015+uwnd2023+uwnd1987+uwnd1982+uwnd2002+uwnd2009+uwnd2004+uwnd1994+uwnd2006+uwnd1986+uwnd1991)
+
+uwnd1984=ave(uwnd.2,time=aug1984,time=oct1984)
+uwnd2021=ave(uwnd.2,time=aug2021,time=oct2021)
+uwnd1983=ave(uwnd.2,time=aug1983,time=oct1983)
+uwnd1995=ave(uwnd.2,time=aug1995,time=oct1995)
+uwnd2016=ave(uwnd.2,time=aug2016,time=oct2016)
+uwnd1985=ave(uwnd.2,time=aug1985,time=oct1985)
+uwnd2020=ave(uwnd.2,time=aug2020,time=oct2020)
+uwnd2011=ave(uwnd.2,time=aug2011,time=oct2011)
+uwnd1998=ave(uwnd.2,time=aug1998,time=oct1998)
+uwnd1999=ave(uwnd.2,time=aug1999,time=oct1999)
+uwnd2022=ave(uwnd.2,time=aug2022,time=oct2022)
+uwnd2007=ave(uwnd.2,time=aug2007,time=oct2007)
+uwnd2010=ave(uwnd.2,time=aug2010,time=oct2010)
+uwnd1988=ave(uwnd.2,time=aug1988,time=oct1988)
+uwndNina=(1/14)*(uwnd1984+uwnd2021+uwnd1983+uwnd1995+uwnd2016+uwnd1985+uwnd2020+uwnd2011+uwnd1998+uwnd1999+uwnd2022+uwnd2007+uwnd2010+uwnd1988)
+
+auguwnd=ave(uwnd.2,time=aug1980,time=aug2025,12)
+sepuwnd=ave(uwnd.2,time=sep1980,time=sep2025,12)
+octuwnd=ave(uwnd.2,time=oct1980,time=oct2025,12)
+ASOuwnd=(1/3)*(auguwnd+sepuwnd+octuwnd)
+
+
+vwnd1997=ave(vwnd.3,time=aug1997,time=oct1997)
+vwnd1984=ave(vwnd.3,time=aug1984,time=oct1984)
+vwnd1980=ave(vwnd.3,time=aug1980,time=oct1980)
+vwnd2015=ave(vwnd.3,time=aug2015,time=oct2015)
+vwnd2013=ave(vwnd.3,time=aug2013,time=oct2013)
+vwnd2025=ave(vwnd.3,time=aug2025,time=oct2025)
+vwnd2012=ave(vwnd.3,time=aug2012,time=oct2012)
+vwnd1991=ave(vwnd.3,time=aug1991,time=oct1991)
+vwndlow=(1/8)*(vwnd1997+vwnd1984+vwnd1980+vwnd2015+vwnd2013+vwnd2025+vwnd2012+vwnd1991)
+
+vwnd1985=ave(vwnd.3,time=aug1985,time=oct1985)
+vwnd2014=ave(vwnd.3,time=aug2014,time=oct2014)
+vwnd2002=ave(vwnd.3,time=aug2002,time=oct2002)
+vwnd1996=ave(vwnd.3,time=aug1996,time=oct1996)
+vwnd2024=ave(vwnd.3,time=aug2024,time=oct2024)
+vwnd2007=ave(vwnd.3,time=aug2007,time=oct2007)
+vwnd1999=ave(vwnd.3,time=aug1999,time=oct1999)
+vwnd1988=ave(vwnd.3,time=aug1988,time=oct1988)
+vwndhigh=(1/8)*(vwnd1985+vwnd2014+vwnd2002+vwnd1996+vwnd2024+vwnd2007+vwnd1999+vwnd1988)
+
+vwnd1997=ave(vwnd.3,time=aug1997,time=oct1997)
+vwnd2015=ave(vwnd.3,time=aug2015,time=oct2015)
+vwnd2023=ave(vwnd.3,time=aug2023,time=oct2023)
+vwnd1987=ave(vwnd.3,time=aug1987,time=oct1987)
+vwnd1982=ave(vwnd.3,time=aug1982,time=oct1982)
+vwnd2002=ave(vwnd.3,time=aug2002,time=oct2002)
+vwnd2009=ave(vwnd.3,time=aug2009,time=oct2009)
+vwnd2004=ave(vwnd.3,time=aug2004,time=oct2004)
+vwnd1994=ave(vwnd.3,time=aug1994,time=oct1994)
+vwnd2006=ave(vwnd.3,time=aug2006,time=oct2006)
+vwnd1986=ave(vwnd.3,time=aug1986,time=oct1986)
+vwnd1991=ave(vwnd.3,time=aug1991,time=oct1991)
+vwndNino=(1/12)*(vwnd1997+vwnd2015+vwnd2023+vwnd1987+vwnd1982+vwnd2002+vwnd2009+vwnd2004+vwnd1994+vwnd2006+vwnd1986+vwnd1991)
+
+vwnd1984=ave(vwnd.3,time=aug1984,time=oct1984)
+vwnd2021=ave(vwnd.3,time=aug2021,time=oct2021)
+vwnd1983=ave(vwnd.3,time=aug1983,time=oct1983)
+vwnd1995=ave(vwnd.3,time=aug1995,time=oct1995)
+vwnd2016=ave(vwnd.3,time=aug2016,time=oct2016)
+vwnd1985=ave(vwnd.3,time=aug1985,time=oct1985)
+vwnd2020=ave(vwnd.3,time=aug2020,time=oct2020)
+vwnd2011=ave(vwnd.3,time=aug2011,time=oct2011)
+vwnd1998=ave(vwnd.3,time=aug1998,time=oct1998)
+vwnd1999=ave(vwnd.3,time=aug1999,time=oct1999)
+vwnd2022=ave(vwnd.3,time=aug2022,time=oct2022)
+vwnd2007=ave(vwnd.3,time=aug2007,time=oct2007)
+vwnd2010=ave(vwnd.3,time=aug2010,time=oct2010)
+vwnd1988=ave(vwnd.3,time=aug1988,time=oct1988)
+vwndNina=(1/14)*(vwnd1984+vwnd2021+vwnd1983+vwnd1995+vwnd2016+vwnd1985+vwnd2020+vwnd2011+vwnd1998+vwnd1999+vwnd2022+vwnd2007+vwnd2010+vwnd1988)
+
+augvwnd=ave(vwnd.3,time=aug1980,time=aug2025,12)
+sepvwnd=ave(vwnd.3,time=sep1980,time=sep2025,12)
+octvwnd=ave(vwnd.3,time=oct1980,time=oct2025,12)
+ASOvwnd=(1/3)*(augvwnd+sepvwnd+octvwnd)
+
+set line 1 1 12
+set arrowhead .08
+
+set vpage 0 4.25 7.32 10.98
+set lat 0 80
+set lon 150 345
+set ylint 10
+set grads off
+color -kind NGSbluered9 -gxout shaded -levs -13 -11 -9 -7 -5 -3 -1 1 3 5 7 9 11 13
+d hgtlow-ASOhgt
+set arrscl .5 2
+d skip(uwndlow-ASOuwnd,2,2);vwndlow-ASOvwnd
+draw title 500 hPa steering flow: Low landfalling probability
+
+set vpage 4.25 8.5 7.32 10.98
+set lat 0 80
+set lon 150 345
+set ylint 10
+set grads off
+color -kind NGSbluered9 -gxout shaded -levs -13 -11 -9 -7 -5 -3 -1 1 3 5 7 9 11 13
+d hgthigh-ASOhgt
+set arrscl .5 2
+d skip(uwndhigh-ASOuwnd,2,2);vwndhigh-ASOvwnd
+draw title 500 hPa steering flow: High landfalling probability
+
+set vpage 0 4.25 4.66 8.32
+set lat 0 80
+set lon 150 345
+set ylint 10
+set grads off
+color -kind NGSbluered9 -gxout shaded -levs -13 -11 -9 -7 -5 -3 -1 1 3 5 7 9 11 13
+d hgtNino-ASOhgt
+cbarn
+set arrscl .5 2
+d skip(uwndNino-ASOuwnd,2,2);vwndNino-ASOvwnd
+draw title 500 hPa steering flow: El Nino
+
+set vpage 4.25 8.5 4.66 8.32
+set lat 0 80
+set lon 150 345
+set ylint 10
+set grads off
+color -kind NGSbluered9 -gxout shaded -levs -13 -11 -9 -7 -5 -3 -1 1 3 5 7 9 11 13
+d hgtNina-ASOhgt
+cbarn
+set arrscl .5 2
+d skip(uwndNina-ASOuwnd,2,2);vwndNina-ASOvwnd
+draw title 500 hPa steering flow: La Nina
+
+set vpage 0 2.125 1.5 5.16
+set lat 10 50
+set lon 250 300
+set ylint 10
+set xlint 10
+set grads off
+color -kind NGSbluered9 -gxout shaded -levs -13 -11 -9 -7 -5 -3 -1 1 3 5 7 9 11 13
+d hgtlow-ASOhgt
+set arrscl .5 1
+d uwndlow-ASOuwnd;vwndlow-ASOvwnd
+draw title Low landfalling probability
+
+set vpage 2.125 4.25 1.5 5.16
+set lat 10 50
+set lon 250 300
+set ylint 10
+set xlint 10
+set grads off
+color -kind NGSbluered9 -gxout shaded -levs -13 -11 -9 -7 -5 -3 -1 1 3 5 7 9 11 13
+d hgthigh-ASOhgt
+set arrscl .5 1
+d uwndhigh-ASOuwnd;vwndhigh-ASOvwnd
+draw title High landfalling probability
+
+set vpage 4.25 6.375 1.5 5.16
+set lat 10 50
+set lon 250 300
+set ylint 10
+set xlint 10
+set grads off
+color -kind NGSbluered9 -gxout shaded -levs -13 -11 -9 -7 -5 -3 -1 1 3 5 7 9 11 13
+d hgtNino-ASOhgt
+set arrscl .5 1
+d uwndNino-ASOuwnd;vwndNino-ASOvwnd
+draw title El Nino
+
+set vpage 6.375 8.5 1.5 5.16
+set lat 10 50
+set lon 250 300
+set ylint 10
+set xlint 10
+set grads off
+color -kind NGSbluered9 -gxout shaded -levs -13 -11 -9 -7 -5 -3 -1 1 3 5 7 9 11 13
+d hgtNina-ASOhgt
+set arrscl .5 1
+d uwndNina-ASOuwnd;vwndNina-ASOvwnd
+draw title La Nina
+
+printim steering.png x1750 y2200 white
